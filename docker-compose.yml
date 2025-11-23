@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  oauth2-client:
+    build: .
+    container_name: oauth2-client
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_PROFILES_ACTIVE=default
+    # Les credentials OAuth2 doivent être fournis via variables d'environnement
+    # ou via un fichier application.yml monté en volume
+    # env_file:
+    #   - .env
+

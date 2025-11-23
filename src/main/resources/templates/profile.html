@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Profil Utilisateur</title>
+</head>
+<body>
+<h2>Profil Google</h2>
+
+<div th:if="${name != null}">
+    <img th:src="${picture}" width="100" alt="Photo de profil"/>
+    
+    <p><strong>Nom :</strong> <span th:text="${name}"></span></p>
+    <p><strong>Email :</strong> <span th:text="${email}"></span></p>
+    
+    <a href="/logout">Se déconnecter</a>
+</div>
+
+<div th:if="${name == null}">
+    <p>Vous n'êtes pas connecté. <a href="/">Retour à l'accueil</a></p>
+</div>
+</body>
+</html>
+
